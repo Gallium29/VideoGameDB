@@ -1,3 +1,21 @@
+<html lang="en">
+<head>
+    <title>Special</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Special Queries</h1>
+        <p>On this page you will be able to perfrom the special queries</p>
+    </div>
+</div>
+
 <?php
 
 $game_id = $_POST["game_id"];
@@ -34,20 +52,42 @@ else {
 /* res after insertion */
 
 /* game */
+
 $sql = "SELECT * 
-		FROM Game";
-$res = $conn->query($sql);
-if ($res->num_rows > 0) {
-    echo "<table><tr><th>gamer_id</th><th>game_name</th><th>genre</th><th>rating</th><th>release_date</th><th>developer_id</th></tr>";
-    while($row = $res->fetch_assoc()) {
-        echo "<tr><td>".$row["game_id"]."</td><td>".$row["game_name"]."</td><td> ".$row["genre"]."</td><td>".$row["rating"]."</td><td>".$row["release_date"]."</td><td>".$row["developer_id"]."</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 results";
+        FROM Game";
+$result = $conn->query($sql);
+
+echo "<table class='table'>
+<thead class='thead-dark'>
+<tr>
+<th>Game ID</th>
+<th>Game Name</th>
+<th>genre</th>
+<th>Rating</th>
+<th>Release Date</th>
+<th>Developer ID</th>
+</tr>
+</thead>
+<tbody>";
+while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row['game_id'] . "</td>";
+    echo "<td>" . $row['game_name'] . "</td>";
+    echo "<td>" . $row['genre'] . "</td>";
+    echo "<td>" . $row['rating'] . "</td>";
+    echo "<td>" . $row['release_date'] . "</td>";
+    echo "<td>" . $row['developer_id'] . "</td>";
+    echo "</tr>";
 }
+echo "</tbody>";
+echo "</table>";
 
 $conn->close();
+
 ?>
 
-<a href="InsertGame.html"><button type="button" class="btn btn-primary">Back to Insert Page</button></a>
+<footer class="container-fluid text-center">
+    <a href="/admin/InsertGame.html"><button type="button" class="btn btn-primary">Back</button></a>
+</footer>
+</body>
+</html>

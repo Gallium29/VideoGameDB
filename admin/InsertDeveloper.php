@@ -1,5 +1,22 @@
-<?php
+<html lang="en">
+<head>
+    <title>Special</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Insert Developer</h1>
+        <p>On this page you will see the result after inserting developers</p>
+    </div>
+</div>
+
+<?php
 $developer_id = $_POST["developer_id"];
 $developer_name = $_POST["developer_name"];
 $location = $_POST["location"];
@@ -15,9 +32,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     echo "Connection failed.";
     die("Connection failed: " . $conn->connect_error);
-} 
-
-/* insert function */
+}
 
 /* developer */
 $sql = "INSERT INTO Developer
@@ -35,19 +50,34 @@ else {
 /* developer */
 $sql = "SELECT * 
 		FROM Developer";
-$res = $conn->query($sql);
-if ($res->num_rows > 0) {
-    echo "<table><tr><th>developer_id</th><th>developer_name</th><th>location</th><th>average_game_rating</th></tr>";
-    while($row = $res->fetch_assoc()) {
-        echo "<tr><td>".$row["developer_id"]."</td><td>".$row["developer_name"]."</td><td> ".$row["location"]."</td><td>".$row["average_game_rating"]."</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 results";
+$result = $conn->query($sql);
+
+echo "<table class='table'>
+<thead class='thead-dark'>
+<tr>
+<th>Developer ID</th>
+<th>Developer Name</th>
+<th>Location</th>
+<th>Average Rating</th>
+</tr>
+</thead>
+<tbody>";
+while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row['developer_id'] . "</td>";
+    echo "<td>" . $row['developer_name'] . "</td>";
+    echo "<td>" . $row['location'] . "</td>";
+    echo "<td>" . $row['average_game_rating'] . "</td>";
+    echo "</tr>";
 }
+echo "</tbody>";
+echo "</table>";
 
 $conn->close();
-
 ?>
 
-<a href="InsertDeveloper.html"><button type="button" class="btn btn-primary">Back to Insert Page</button></a>
+<footer class="container-fluid text-center">
+    <a href="/admin/InsertDeveloper.html"><button type="button" class="btn btn-primary">Back</button></a>
+</footer>
+</body>
+</html>
