@@ -54,10 +54,21 @@ while ($row = $result->fetch_assoc()) {
 }
 echo "</table>";
 
+if ($result->num_rows == 0) {
+    echo "You have no orders.";
+}
+
 $conn->close();
 ?>
 
-<a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+        </div>
+    </div>
+
+</div>
 
 
 </body>

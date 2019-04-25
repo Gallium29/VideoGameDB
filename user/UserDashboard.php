@@ -31,10 +31,11 @@ $_SESSION["user_id"] = $_POST["user_id"];
         <div class="col-sm-3">
             <a href="ViewTopGame.php"><button type="button" class="btn btn-primary">Top Rated</button></a>
         </div>
+        <div class="col-sm-3">
+             <a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+        </div>
     </div>
 
 </div>
-
-<a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
 </body>
 </html>

@@ -1,0 +1,58 @@
+
+<html lang="en">
+<head>
+    <title>Special</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Special Queries</h1>
+        <p>On this page you will be able to perfrom the special queries</p>
+    </div>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+    <div class="row">
+        <ol>
+            <div class="col-sm-4">
+                <li>
+                    <p>We use this query to see which games each user bought.</p>
+                    <form action="SpecialQuery1.php" method="post">
+                    <input type="submit" value="special query1">
+                    </form>
+                </li>
+            </div>
+
+            <div class="col-sm-4">
+                <li>
+                    <p>We use this query to see the sales of each game and in descending order.</p>
+                    <form action="SpecialQuery2.php" method="post">
+                    <input type="submit" value="special query2">
+                    </form>
+                </li>
+            </div>
+
+            <div class="col-sm-4">
+                <li>
+                    <p>This query return all games that are equal to or above average users' rating.</p>
+                    <form action="SpecialQuery3.php" method="post">
+                    <input type="submit" value="special query3">
+                     </form>
+                </li>
+            </div>
+
+        </ol>
+    </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+    <a href="/admin/AdminDashboard.html"><button type="button" class="btn btn-primary">Back to Dashboard</button></a>
+</footer>
+</body>
+</html>

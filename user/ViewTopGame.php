@@ -87,10 +87,17 @@ $result = $conn->query($sql2) or die($conn->error);
 $conn->close();
 ?>
 
-<a href="ViewOrder.php"><button type="button" class="btn btn-primary">Your Orders</button></a>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="ViewOrder.php"><button type="button" class="btn btn-primary">Your Orders</button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+        </div>
+    </div>
 
-<a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
-
+</div>
 
 </body>
 </html>

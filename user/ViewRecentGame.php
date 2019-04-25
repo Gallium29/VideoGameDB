@@ -76,10 +76,17 @@ echo "</table>";
 $conn->close();
 ?>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="ViewOrder.php"><button type="button" class="btn btn-primary">Your Orders</button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+        </div>
+    </div>
 
-<a href="ViewOrder.php"><button type="button" class="btn btn-primary">Your Orders</button></a>
-
-<a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
+</div>
 
 
 </body>
