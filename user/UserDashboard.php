@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION["user_id"] = $_POST["user_id"];
 ?>
 
 <!DOCTYPE html>
@@ -21,30 +22,19 @@ session_start();
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            <h3>Admin Login</h3>
-            <form action="/admin/AdminDashboard.html" method=post>
-            Admin ID:<br>
-            <input type="text" name="admin_id"><br>
-            Password:<br>
-            <input type="text" name="admin_password"><br>
-            <input type="submit" value="Submit">
-            </form>
+        <div class="col-sm-3">
+            <a href="ViewAllGame.php"><button type="button" class="btn btn-primary">All Games</button></a>
         </div>
-
-        <div class="col-sm-6">
-            <h3>User Login</h3>
-            <form action="/user/UserDashboard.php" method=post>
-            User ID:<br>
-            <input type="text" name="user_id"><br>
-            Password:<br>
-            <input type="text" name="user_password"><br>
-            <input type="submit" value="Submit">
-            </form>
+        <div class="col-sm-3">
+            <a href="ViewRecentGame.php"><button type="button" class="btn btn-primary">Recently Released</button></a>
         </div>
-
+        <div class="col-sm-3">
+            <a href="ViewTopGame.php"><button type="button" class="btn btn-primary">Top Rated</button></a>
+        </div>
     </div>
+
 </div>
 
+<a href="/HomePage.html"><button type="button" class="btn btn-primary">Back to Login Page</button></a>
 </body>
 </html>

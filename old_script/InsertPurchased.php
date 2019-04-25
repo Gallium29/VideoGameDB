@@ -7,7 +7,7 @@ $rating = $_POST["rating"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */

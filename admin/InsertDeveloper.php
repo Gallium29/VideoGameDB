@@ -7,7 +7,7 @@ $average_game_rating = $_POST["average_game_rating"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -49,3 +49,5 @@ if ($res->num_rows > 0) {
 $conn->close();
 
 ?>
+
+<a href="InsertDeveloper.html"><button type="button" class="btn btn-primary">Back to Insert Page</button></a>

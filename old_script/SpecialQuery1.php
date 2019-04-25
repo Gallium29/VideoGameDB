@@ -1,10 +1,8 @@
 <?php
 
-
-
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -22,18 +20,15 @@ SELECT purchased.user_id, game.game_name
 FROM game INNER JOIN purchased On game.game_id = purchased.game_id
 order by purchased.user_id";
 
-$sql2 = "SELECT game_name, count(user_id) as gc
-from gamepurchasedby
-group by game_name
-order by gc desc;";
+$sql2 = "SELECT * FROM gamepurchasedby";
 
 $res1 = $conn->query($sql1);
 $res2 = $conn->query($sql2);
 
 if ($res2->num_rows > 0) {
-    echo "<table><tr><th>game_name</th><th>game_count</th></tr>";
+    echo "<table><tr><th>user_id</th><th>game_name</th></tr>";
     while($row = $res2->fetch_assoc()) {
-        echo "<tr><td>".$row["game_name"]."</td><td>".$row["gc"]."</td></tr>";
+        echo "<tr><td>".$row["user_id"]."</td><td>".$row["game_name"]."</td></tr>";
     }
     echo "</table>";
 } else {

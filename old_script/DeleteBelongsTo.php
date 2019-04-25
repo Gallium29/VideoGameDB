@@ -1,10 +1,10 @@
 <?php
 
-$developer_id = $_POST["developer_id"];
+$game_id = $_POST["game_id"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "DELETE FROM Developer WHERE developer_id = $developer_id"; 
+$sql = "DELETE FROM BelongsTo WHERE game_id = $game_id"; 
 if($conn->query($sql) === TRUE){ 
 	echo "Record was deleted successfully."; 
 } 

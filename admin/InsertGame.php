@@ -9,7 +9,7 @@ $developer_id = $_POST["developer_id"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -48,5 +48,6 @@ if ($res->num_rows > 0) {
 }
 
 $conn->close();
-
 ?>
+
+<a href="InsertGame.html"><button type="button" class="btn btn-primary">Back to Insert Page</button></a>

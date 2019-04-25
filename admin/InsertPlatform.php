@@ -5,7 +5,7 @@ $platform_name = $_POST["platform_name"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -46,3 +46,5 @@ if ($res->num_rows > 0) {
 $conn->close();
 
 ?>
+
+<a href="/admin/InsertPlatform.html"><button type="button" class="btn btn-primary">Back to Insert Page</button></a>

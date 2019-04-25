@@ -1,10 +1,10 @@
 <?php
 
-$platform_id = $_POST["platform_id"];
+$game_id = $_POST["game_id"];
 
 $servername = "localhost";
 $username = "root";
-$password = "PASSWORD";
+$password = "zhengjia";
 $dbname = "gamedb";
 
 /* connect to database */
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "DELETE FROM Platform WHERE platform_id = $platform_id"; 
+$sql = "DELETE FROM Game WHERE game_id = $game_id"; 
 if($conn->query($sql) === TRUE){ 
 	echo "Record was deleted successfully."; 
 } 
